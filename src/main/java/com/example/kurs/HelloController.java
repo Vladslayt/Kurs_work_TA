@@ -76,11 +76,12 @@ public class HelloController {
 
     public void startTimer(int seconds) {
         future = executorService.schedule(() -> {
-            System.out.println("Таймер закончился");
+//            System.out.println("10 секунд прошло");
             if(valueMoney == 0){
                 if(valueEat - 10 <= 0){
                     valueEat = 0;
-                    infoTextField.setText("Бездействие. Срочно нужно кушать!!!");
+                    drawPersonInPlace(Place.EAT);
+                    infoTextField.setText("Бездействие. Срочно кушать!!!");
                 }
                 else {
                     valueEat -= 10;
@@ -89,7 +90,7 @@ public class HelloController {
             }
             else{
                 drawPersonInPlace(Place.SLEEP);
-                infoTextField.setText("Бездействие. Пошёл спать");
+                infoTextField.setText("Бездействие. Пошел спать!!!");
             }
             updateTextField();
             updateTimer(10);
@@ -117,7 +118,7 @@ public class HelloController {
 
     private final int EAT_MAX = 100;
     private final int TIRED_MAX = 100;
-    private final int MONEY_MAX = 150;
+    private final int MONEY_MAX = 10000;
     private int valueEat = 0;
     private int valueTired = 0;
     private int valueMoney = 10;
@@ -139,21 +140,17 @@ public class HelloController {
                 valueTired += 10;
             valueMoney += 50;
             drawPersonInPlace(Place.WORK);
-            infoTextField.setText("Работа");
+            infoTextField.setText("Работать");
         } else if (valueEat == EAT_MAX) {
             infoTextField.setText("Голод максимален, нужно поесть!");
-            /*drawPersonInPlace(Place.EAT);
-            goEatButtonIsClicked(event);*/
         } else {
             infoTextField.setText("Усталость максимальна, нужно поспать!");
-            /*drawPersonInPlace(Place.SLEEP);
-            goToSleepButtonIsClicked(event);*/
         }
     }
     @FXML
     void goEatButtonIsClicked(ActionEvent event) {
         updateTimer(10);
-        infoTextField.setText("Еда");
+        infoTextField.setText("Есть");
         if(valueMoney - 10 <= 0){
             infoTextField.setText("Нужны деньги, чтобы поесть!!!");
         }
@@ -183,11 +180,9 @@ public class HelloController {
             else
                 valueTired -= 50;
             drawPersonInPlace(Place.SLEEP);
-            infoTextField.setText("Сон");
+            infoTextField.setText("Спать");
         } else {
             infoTextField.setText("Голод максимален, нужно поесть!");
-            /*drawPersonInPlace(Place.EAT);
-            goEatButtonIsClicked(event);*/
         }
     }
     @FXML
@@ -203,16 +198,13 @@ public class HelloController {
                 valueTired = TIRED_MAX;
             else
                 valueTired += 5;
+            valueMoney += 10;
             drawPersonInPlace(Place.PROJECT);
-            infoTextField.setText("Работа над своим проектом");
+            infoTextField.setText("Работать над своим проектом");
         } else if (valueEat == EAT_MAX) {
             infoTextField.setText("Голод максимален, нужно поесть!");
-            /*drawPersonInPlace(Place.EAT);
-            goEatButtonIsClicked(event);*/
         } else {
             infoTextField.setText("Усталость максимальна, нужно поспать!");
-            /*drawPersonInPlace(Place.SLEEP);
-            goToSleepButtonIsClicked(event);*/
         }
     }
 
@@ -230,15 +222,11 @@ public class HelloController {
             else
                 valueTired += 5;
             drawPersonInPlace(Place.WALK);
-            infoTextField.setText("На прогулке");
+            infoTextField.setText("Гулять");
         } else if (valueEat == EAT_MAX) {
             infoTextField.setText("Голод максимален, нужно поесть!");
-            /*drawPersonInPlace(Place.EAT);
-            goEatButtonIsClicked(event);*/
         } else {
             infoTextField.setText("Усталость максимальна, нужно поспать!");
-            /*drawPersonInPlace(Place.SLEEP);
-            goToSleepButtonIsClicked(event);*/
         }
     }
 
