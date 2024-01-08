@@ -3,35 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kurs.HelloController">
-   <Rectangle fx:id="workRectangle" arcHeight="5.0" arcWidth="5.0" fill="#bee1de" height="64.0" layoutX="47.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-   <Text layoutX="78.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Работа" wrappingWidth="46.833984375" />
-   <Rectangle fx:id="projectRectangle" arcHeight="5.0" arcWidth="5.0" fill="#bee1de" height="64.0" layoutX="180.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-   <Text layoutX="195.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Свой проект" />
-   <Rectangle fx:id="sleepRectangle" arcHeight="5.0" arcWidth="5.0" fill="#bee1de" height="64.0" layoutX="101.0" layoutY="149.0" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-   <Text layoutX="143.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сон" />
-   <Rectangle fx:id="eatRectangle" arcHeight="5.0" arcWidth="5.0" fill="#bee1de" height="64.0" layoutX="315.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-   <Text layoutX="358.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Еда" />
-   <AnchorPane layoutY="258.0" prefHeight="201.0" prefWidth="469.0" style="-fx-background-color: gray;">
-      <Button fx:id="goToWorkButton" layoutX="39.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToWorkButtonIsClicked" prefHeight="64.0" prefWidth="117.0" text="Пойти работать" />
-      <Button fx:id="doYourProjectButton" layoutX="165.0" layoutY="25.0" mnemonicParsing="false" onAction="#doYourProjectButtonIsClicked" prefHeight="64.0" prefWidth="139.0" text="Заняться проектом" />
-      <Button fx:id="goEatButton" layoutX="311.0" layoutY="25.0" mnemonicParsing="false" onAction="#goEatButtonIsClicked" prefHeight="64.0" prefWidth="108.0" text="Поесть" />
-      <Button fx:id="goToSleepButton" layoutX="111.0" layoutY="118.0" mnemonicParsing="false" onAction="#goToSleepButtonIsClicked" prefHeight="64.0" prefWidth="108.0" text="Пойти спать" />
-      <Button fx:id="goToWalkButton" layoutX="250.0" layoutY="118.0" mnemonicParsing="false" onAction="#goToWalkButtonIsClicked" prefHeight="64.0" prefWidth="108.0" text="Пойти гулять" />
-   </AnchorPane>
-   <TextField fx:id="infoTextField" layoutX="47.0" layoutY="223.0" prefHeight="26.0" prefWidth="376.0" />
-   <Label layoutX="47.0" layoutY="24.0" text="Голод" />
-   <TextField fx:id="eatTextField" layoutX="93.0" layoutY="21.0" prefHeight="26.0" prefWidth="33.0" promptText="0" />
-   <Label layoutX="312.0" layoutY="25.0" text="Усталость" />
-   <TextField fx:id="tiredTextField" layoutX="381.0" layoutY="20.0" prefHeight="26.0" prefWidth="33.0" promptText="0" />
-   <Rectangle fx:id="walkRectangle" arcHeight="5.0" arcWidth="5.0" fill="#bee1de" height="64.0" layoutX="261.0" layoutY="149.0" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-   <Text layoutX="286.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Прогулка" />
-   <Circle fx:id="personCircle" fill="#ff1f27" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
-   <Label layoutX="180.0" layoutY="24.0" text="Деньги" />
-   <TextField fx:id="moneyTextField" layoutX="235.0" layoutY="20.0" prefHeight="26.0" prefWidth="33.0" promptText="0" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="562.0" style="-fx-background-color: #bad284;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kurs.HelloController">
+   <ImageView fx:id="houseImage" fitHeight="575.0" fitWidth="568.0" layoutX="-4.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="file:/D:/Программы/IntelliJ%20IDEA%20Community%20Edition%202020.3.2/kurs/src/main/java/com/example/kurs/дом-transformed.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="manImage" fitHeight="51.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="file:/D:/Программы/IntelliJ%20IDEA%20Community%20Edition%202020.3.2/kurs/src/main/java/com/example/kurs/chel.png" />
+      </image>
+   </ImageView>
+   <Button fx:id="goToWorkButton" layoutX="223.0" layoutY="577.0" mnemonicParsing="false" onAction="#goToWorkButtonIsClicked" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #00A550;" text="Работать" />
+   <Button fx:id="doYourProjectButton" layoutX="268.0" layoutY="649.0" mnemonicParsing="false" onAction="#doYourProjectButtonIsClicked" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: #00A550;" text="Работать над своим проектом" />
+   <Button fx:id="goEatButton" layoutX="70.0" layoutY="577.0" mnemonicParsing="false" onAction="#goEatButtonIsClicked" prefHeight="51.0" prefWidth="93.0" style="-fx-background-color: #00A550;" text="Есть" />
+   <Button fx:id="goToSleepButton" layoutX="69.0" layoutY="649.0" mnemonicParsing="false" onAction="#goToSleepButtonIsClicked" prefHeight="51.0" prefWidth="93.0" style="-fx-background-color: #00A550;" text="Спать" />
+   <Button fx:id="goToWalkButton" layoutX="383.0" layoutY="577.0" mnemonicParsing="false" onAction="#goToWalkButtonIsClicked" prefHeight="51.0" prefWidth="93.0" style="-fx-background-color: #00A550;" text="Гулять" />
+   <TextField fx:id="infoTextField" layoutX="69.0" layoutY="714.0" prefHeight="26.0" prefWidth="410.0" />
+   <Label layoutX="95.0" layoutY="532.0" text="Голод" />
+   <TextField fx:id="eatTextField" layoutX="135.0" layoutY="528.0" prefHeight="26.0" prefWidth="33.0" promptText="0" />
+   <Label layoutX="373.0" layoutY="532.0" text="Усталость" />
+   <TextField fx:id="tiredTextField" layoutX="441.0" layoutY="528.0" prefHeight="26.0" prefWidth="33.0" promptText="0" />
+   <Label layoutX="228.0" layoutY="532.0" text="Деньги" />
+   <TextField fx:id="moneyTextField" layoutX="274.0" layoutY="528.0" prefHeight="26.0" prefWidth="46.0" promptText="0" text="50" />
 </AnchorPane>

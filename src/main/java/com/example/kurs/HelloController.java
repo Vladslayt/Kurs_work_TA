@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import lombok.Data;
@@ -34,10 +35,6 @@ public class HelloController {
         }
     }
 
-/*    private static final String STYLE_FOR_AVAILABLE_BUTTON = "activePanelButton";
-    private static final String STYLE_FOR_UNAVAILABLE_BUTTON = "notActivePanelButton";*/
-
-
     @FXML
     private Button goToWorkButton;
     @FXML
@@ -49,20 +46,6 @@ public class HelloController {
     @FXML
     private Button goToWalkButton;
     @FXML
-    private Label welcomeText;
-    @FXML
-    private Circle personCircle;
-    @FXML
-    private Rectangle workRectangle;
-    @FXML
-    private Rectangle projectRectangle;
-    @FXML
-    private Rectangle walkRectangle;
-    @FXML
-    private Rectangle sleepRectangle;
-    @FXML
-    private Rectangle eatRectangle;
-    @FXML
     private TextField infoTextField;
     @FXML
     private TextField eatTextField;
@@ -70,7 +53,10 @@ public class HelloController {
     private TextField tiredTextField;
     @FXML
     private TextField moneyTextField;
-
+    @FXML
+    private ImageView houseImage;
+    @FXML
+    private ImageView manImage;
     private static ScheduledExecutorService executorService;
     private static ScheduledFuture<?> future;
 
@@ -109,11 +95,11 @@ public class HelloController {
     }
 
     private final Map<Place, Point> placesAndItsMapPoints = Map.of(
-            Place.WORK, new Point(47 + 108 / 2, 58 + 64 * 3 / 4),
-            Place.PROJECT, new Point(180 + 108 / 2, 58 + 64 * 3 / 4),
-            Place.EAT, new Point(315 + 108 / 2, 58 + 64 * 3 / 4),
-            Place.SLEEP, new Point(101 + 108 / 2, 149 + 64 * 3 / 4),
-            Place.WALK, new Point(261 + 108 / 2, 149 + 64 * 3 / 4)
+            Place.WORK, new Point(265, 110),
+            Place.PROJECT, new Point(150, 175),
+            Place.EAT, new Point(155, 245),
+            Place.SLEEP, new Point(380, 115),
+            Place.WALK, new Point(255, 440)
     );
 
     private final int EAT_MAX = 100;
@@ -121,7 +107,7 @@ public class HelloController {
     private final int MONEY_MAX = 10000;
     private int valueEat = 0;
     private int valueTired = 0;
-    private int valueMoney = 10;
+    private int valueMoney = 50;
 
 
 
@@ -233,8 +219,8 @@ public class HelloController {
     private void drawPersonInPlace(Place place) {
         Platform.runLater(() -> {
             Point placePoint = placesAndItsMapPoints.get(place);
-            personCircle.setCenterX(placePoint.getX());
-            personCircle.setCenterY(placePoint.getY());
+            manImage.setX(placePoint.getX());
+            manImage.setY(placePoint.getY());
         });
         updateTextField();
     }
